@@ -2,16 +2,40 @@
   "name": "account-book",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "HongilHwang",
+    "email": "hongilhwang@gmail.com",
+    "url": "https://github.com/hongilhwang"
+  },
+  "build": {
+    "appId": "com.seravie.account-book",
+    "productName": "AccountBook",
+    "copyright": "Copyright © 2019 ${author}",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "dependencies": {
+    "electron-is-dev": "^1.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
+  "main": "public/electron.js",
+  "homepage": "./",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"BROWSER=none npm run start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "build -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +51,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.10",
+    "@rescripts/rescript-env": "^0.0.10",
+    "concurrently": "^4.1.0",
+    "electron": "^5.0.1",
+    "electron-builder": "^20.41.0",
+    "foreman": "^3.0.1",
+    "typescript": "^3.4.5",
+    "wait-on": "^3.2.0"
   }
 }
