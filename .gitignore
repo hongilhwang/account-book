@@ -4,7 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-.ieda
+
+# webstorm
+.idea
+
 # testing
 /coverage
 
