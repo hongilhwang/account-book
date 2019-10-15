@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import Main from './pages/main';
+import AppLayout from './components/layout/components/AppLayout';
+import 'antd/dist/antd.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-            Hello world
-        </header>
-      </div>
+      <AppLayout>
+        <Main/>
+      </AppLayout>
+
     );
   }
 }
