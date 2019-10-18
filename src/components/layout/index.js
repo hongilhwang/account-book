@@ -1,11 +1,3 @@
-import React from 'react';
-
-const Layout = () => {
-  return (
-    <div>
-      
-    </div>
-  );
-};
+import Layout from './components/Layout';
 
 export default Layout;
